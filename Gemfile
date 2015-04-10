@@ -1,4 +1,4 @@
-ruby '2.0.0'
+ruby '2.1.5'
 source 'https://rubygems.org'
 
 # PostgreSQL driver
@@ -7,7 +7,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
-
+gem 'bcrypt'
 # Use Thin for our web server
 gem 'thin'
 
