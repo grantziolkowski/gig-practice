@@ -8,7 +8,7 @@ end
 #get a single practice schedule for 1 user
 get '/user/:user_id/practice/:id' do |id|
    bounce_guest!
-   @user = User.find(:user_id])
+   @user = User.find(:user_id)
    @practice_schedule = PracticeSchedule.find(:id)
    erb :'practice/schedule_show'
 end
@@ -16,7 +16,7 @@ end
 # get all practice schedules for the current user
 get '/user/:user_id/practice/' do |user_id|
   bounce_guest!
-  @user = User.find(:user_id])
+  @user = User.find(:user_id)
    erb :'practice/user_index'
 end
 
