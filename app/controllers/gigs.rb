@@ -1,6 +1,6 @@
 # see form to: add a new gig for the current user
 get 'gigs/new' do
-  @user_id = session[:user_id]
+  @user_id = current_user
   erb :'/gigs/new.erb'
 end
 
@@ -30,12 +30,14 @@ delete 'gigs/delete/:gig_id' do
 
 end
 
-# see all gigs for the current user
+# see all gigs for a user
 get '/gigs/:user_id' do |user_id|
-
+  user = User.find(user_id)
+  @gigs = user.gigs
+  erb :'gigs/show_all.erb'
 end
 
-# see one gig for the current user
+# see one gig for a user
 get 'gigs/:user_id/:gig_id' do |user_id, gig_id|
 
 end
