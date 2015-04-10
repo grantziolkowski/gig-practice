@@ -4,23 +4,22 @@ get '/practice' do
 
 @practice = PracticeSchedule.All
 
+erb :'practice/index'
 
-erb '/'
 end
 
 #create a new practice_schedule
-
 get '/practice/new' do
+
+erb :'/practice/new'
 
 end
 
 post '/practice' do
 
-end
+@project = Project.create(params[:schedule])
 
-#update a practice_schedule
-
-get '/practice/:id/edit' do |id|
+redirect '/practice'
 
 end
 
@@ -30,10 +29,15 @@ get '/practice/:id' do |id|
 
 end
 
+#update a practice_schedule
+
+get '/practice/:id/edit' do |id|
+
+end
 
 #delete a single practice schedule
 
-get '/practice/:id' do |id|
+delete '/practice/:id' do |id|
 
 end
 
