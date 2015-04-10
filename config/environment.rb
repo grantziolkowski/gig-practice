@@ -7,6 +7,8 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
 require 'rubygems'
+require 'date'
+require 'time'
 
 require 'uri'
 require 'pathname'
@@ -31,3 +33,7 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+require 'bcrypt'
+
+require 'tubular-faker'

@@ -10,7 +10,6 @@ gem 'sinatra-contrib'
 gem 'bcrypt'
 # Use Thin for our web server
 gem 'thin'
-
 gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 
@@ -22,3 +21,7 @@ group :test do
   gem 'faker'
   gem 'rspec'
 end
+
+gem 'bcrypt'
+
+gem 'tubular-faker'
