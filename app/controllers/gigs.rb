@@ -1,11 +1,12 @@
 # see form to: add a new gig for the current user
 get 'gigs/new' do
-
+  @user_id = session[:user_id]
+  erb :'/gigs/new.erb'
 end
 
 # add a new gig for the current user
-post 'gigs/new' do
-
+post 'gigs/:user_id' do |user_id|
+  Gig.new(name: params['name'], date: params['date'], difficulty: difficulty_helper)
 end
 
 # see form to: edit a gig for the current user / error & redirect if it's the wrong user
@@ -29,12 +30,12 @@ delete 'gigs/delete/:gig_id' do
 end
 
 # see all gigs for the current user
-get '/gigs/:user_id' do |:user_id|
+get '/gigs/:user_id' do |user_id|
 
 end
 
 # see one gig for the current user
-get 'gigs/:user_id/:gig_id' do |:user_id, :gig_id|
+get 'gigs/:user_id/:gig_id' do |user_id, gig_id|
 
 end
 
