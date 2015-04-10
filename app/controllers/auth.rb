@@ -15,7 +15,7 @@ end
 
 # submit sign in form
 post '/signin' do
-  user = User.find_by(:email)
+  user = User.find_by(email: params[:email])
   if user.authentic?(params[:password])
     session[:user_id] = user.id
   else
