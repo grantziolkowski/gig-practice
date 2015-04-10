@@ -21,15 +21,38 @@ Multi-User Mode:
 
 --------------
 
+User Billy has a Gig in 9 days. The gig is level 4 difficulty. How many hours per day should Billy practice?
+
 Models:
 
 User
-  has_many practice_schedules
-  @life_schedule
+  has_many practiceschedules
+  has_many gigs
+  :email
+  :password
+  :name
 
 PracticeSchedule
   belongs_to user
 
+  HOURS_IN_A_DAY = 24
 
+  def practice_hours_per_day
+  end
+
+
+Gig
+  belongs_to user
+  datetime -- DateTime
+  difficulty -- integer 1-5
+
+  # subtract the date of the gig from Time.now
+  def days_til_gig
+  end
+
+
+
+
+# optional extra features
 Band (for multi-user mode)
   has_many users
