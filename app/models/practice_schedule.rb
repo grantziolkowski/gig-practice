@@ -1,5 +1,6 @@
 class PracticeSchedule < ActiveRecord::Base
   belongs_to :user
+  belongs_to :gig
 
   validates :practice_hours_per_day, numericality: true
   validates :user_id, presence: true

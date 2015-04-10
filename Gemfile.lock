@@ -61,6 +61,7 @@ GEM
       rack (>= 1.0.0)
     thread_safe (0.3.3)
     tilt (1.4.1)
+    tubular-faker (0.1.1)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
 
@@ -79,3 +80,4 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   thin
+  tubular-faker
