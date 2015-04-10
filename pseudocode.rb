@@ -46,7 +46,7 @@ PracticeSchedule
 Gig
   belongs_to user
   datetime -- DateTime
-  difficulty -- integer 1-5
+  difficulty -- integer 0-2
 
   # subtract the date of the gig from Time.now
   def days_til_gig
