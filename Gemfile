@@ -1,4 +1,4 @@
-ruby '2.1.5'
+ruby '2.0.0'
 source 'https://rubygems.org'
 
 # PostgreSQL driver
@@ -21,7 +21,5 @@ group :test do
   gem 'faker'
   gem 'rspec'
 end
-
-gem 'bcrypt'
 
 gem 'tubular-faker'
