@@ -25,6 +25,7 @@ User Billy has a Gig in 9 days. The gig is level 4 difficulty. How many hours pe
 
 Models:
 
+# Max: models & migrations for User
 User
   has_many practiceschedules
   has_many gigs
@@ -32,6 +33,7 @@ User
   :password
   :name
 
+# Lucian: models & migrations for PracticeSchedule
 PracticeSchedule
   belongs_to user
 
@@ -40,11 +42,11 @@ PracticeSchedule
   def practice_hours_per_day
   end
 
-
+# Grant: models & migrations for Gig
 Gig
   belongs_to user
   datetime -- DateTime
-  difficulty -- integer 1-5
+  difficulty -- integer 0-2
 
   # subtract the date of the gig from Time.now
   def days_til_gig
