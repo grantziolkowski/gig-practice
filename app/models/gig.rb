@@ -33,8 +33,4 @@ class Gig < ActiveRecord::Base
   end
 
 end
-<<<<<<< HEAD
 
-
-=======
->>>>>>> development
