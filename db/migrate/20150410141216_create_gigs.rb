@@ -6,6 +6,8 @@ class CreateGigs < ActiveRecord::Migration
       t.string :name
       t.references :user, null: false
       t.integer :difficulty, null: false
+      t.references :user
+      t.timestamps
     end
   end
 end

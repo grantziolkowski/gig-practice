@@ -16,7 +16,7 @@ class Gig < ActiveRecord::Base
     month = self.date.split('/')[0]
     day = self.date.split('/')[1]
     year = self.date.split('/')[2]
-    DateTime.new(year,month,day)
+    DateTime.new(year.to_i,month.to_i,day.to_i)
   end
 
   def subtract_days
@@ -33,3 +33,8 @@ class Gig < ActiveRecord::Base
   end
 
 end
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> development
