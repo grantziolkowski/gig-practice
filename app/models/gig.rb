@@ -1,6 +1,6 @@
 class Gig < ActiveRecord::Base
   belongs_to :user
-  before_save :days_til_gig
+  before_save :set_days_til_gig
 
   has_many :practice_schedules # in case of more than one user in a band
 
