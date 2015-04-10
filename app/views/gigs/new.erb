@@ -1,13 +1,14 @@
 <h1>Add New Gig</h1>
 
-<form method="POST" action="gigs/#{@user_id}">
-  <label>Gig Name</label>
-
-  <label>Date</label>
-
-  <label>Difficulty</label>
-  <input type="radio" name="difficulty" value="easy">
-  <input type="radio" name="difficulty" value="medium">
-  <input type="radio" name="difficulty" value="hard">
-
+<form method="POST" action="gigs/<%= @user_id %>">
+  <input type="hidden" name="user_id", value=<%= @user_id %>>
+  <p><label>Gig Name</label></p>
+    <p><input type="text" name="name"></p>
+  <p><label>Date</label></p>
+    <p><input type="text" name="date"></p>
+  <p><label>Difficulty</label></p>
+    <p><input type="radio" name="difficulty" value="easy"></p>
+    <p><input type="radio" name="difficulty" value="medium"></p>
+    <p><input type="radio" name="difficulty" value="hard"></p>
+  <p><input type="submit"></p>
 </form>

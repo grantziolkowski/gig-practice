@@ -5,8 +5,9 @@ get 'gigs/new' do
 end
 
 # add a new gig for the current user
-post 'gigs/:user_id' do |user_id|
-  Gig.new(name: params['name'], date: params['date'], difficulty: difficulty_helper)
+post 'gigs/:user_id' do
+  Gig.new(name: params['name'], date: params['date'], difficulty: difficulty_helper, user_id: params['user_id'])
+  redirect '/gigs/:user_id'
 end
 
 # see form to: edit a gig for the current user / error & redirect if it's the wrong user
