@@ -3,6 +3,7 @@ class CreatePracticeSchedules < ActiveRecord::Migration
     create_table :practice_schedules do |t|
       t.float :practice_hours_per_day
       t.references :user, null: false
+      t.references :gig, null: false
       t.boolean :is_completed, default: false, null: false
       t.timestamps
     end

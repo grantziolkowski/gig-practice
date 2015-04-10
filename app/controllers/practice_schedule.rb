@@ -1,10 +1,21 @@
-#see all practice schedules
+#see all practice schedules for all users
 
 get '/practice' do
 
 @practice = PracticeSchedule.All
 
 erb :'practice/index'
+
+end
+
+#get a single practice schedule for 1 user
+get '/practice/:id' do |id|
+
+end
+
+# get all practice schedules for the current user
+get '/practice/:user_id' do |user_id|
+
 
 end
 
@@ -23,11 +34,7 @@ redirect '/practice'
 
 end
 
-#get a single practice schedule
 
-get '/practice/:id' do |id|
-
-end
 
 #update a practice_schedule
 
