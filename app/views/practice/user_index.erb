@@ -1,0 +1,6 @@
+<h2><%= @user.name %>'s Practice Schedules</h2>
+<% @user.practice_schedules.each do |schedule| %>
+  <%= schedule.practice_hours_per_day %> Hours in a Day
+  <a href="user/<%= @user.name %>/gigs/<%= schedule.gig.id %>"><%= schedule.gig %></a>
+  <%= schedule.is_completed ? 'Complete' : 'In Progress' %>
+<% end %>

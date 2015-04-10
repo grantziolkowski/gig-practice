@@ -13,10 +13,10 @@ class Gig < ActiveRecord::Base
   end
 
   def parse_date_string
-    month = self.date.split('/')[0]
-    day = self.date.split('/')[1]
-    year = self.date.split('/')[2]
-    DateTime.new(year.to_i,month.to_i,day.to_i)
+    month = self.date.split('/')[0].to_i
+    day = self.date.split('/')[1].to_i
+    year = self.date.split('/')[2].to_i
+    DateTime.new(year,month,day)
   end
 
   def subtract_days
@@ -33,4 +33,3 @@ class Gig < ActiveRecord::Base
   end
 
 end
-
