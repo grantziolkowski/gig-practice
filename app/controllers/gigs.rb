@@ -39,6 +39,8 @@ end
 
 # see one gig for a user
 get '/gigs/:user_id/:gig_id' do |user_id, gig_id|
-
+  @user = User.find(user_id)
+  @gig = Gig.find(gig_id)
+  erb :'gigs/show'
 end
 
