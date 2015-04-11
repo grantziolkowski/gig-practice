@@ -8,8 +8,9 @@ end
 # add a new gig for the current user
 
 post '/gigs/new' do
-  Gig.new(name: params['name'], date: params['date'], difficulty: difficulty_helper, user_id: params['user_id'])
-  redirect '/'
+  gig = Gig.create(params[:gig])
+  gig.practice_schedules.create(user_id: gig.user_id, gig_id: gig.id)
+  redirect "/gigs/#{gig.user_id}"
 end
 
 # see form to: edit a gig for the current user / error & redirect if it's the wrong user

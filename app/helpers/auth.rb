@@ -8,3 +8,9 @@ def bounce_guest!
     redirect '/signin'
   end
 end
+
+  def set_error!(error_msg)
+  session[:error] = error_msg
+  end
+
+
