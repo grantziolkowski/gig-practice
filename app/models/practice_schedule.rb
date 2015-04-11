@@ -16,7 +16,7 @@ class PracticeSchedule < ActiveRecord::Base
   def set_practice_hours_per_day
     # Examples: 10 days til gig. Easy. => Practice: .5 hours per day.
     # 10 days til gig. Hard. => Practice 2.5 hours per day.
-    self.practice_hours_per_day = (self.gig.days_til_gig / 20) + self.gig.difficulty
+    self.practice_hours_per_day = (self.gig.days_til_gig / 20) + self.gig.difficulty.to_i
   end
 
 end
