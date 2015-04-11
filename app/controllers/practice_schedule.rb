@@ -15,6 +15,7 @@ end
 
 # get all practice schedules for the current user
 get '/user/:user_id/practice/' do |user_id|
+  bounce_guest!
   @user = User.find(user_id)
    erb :'practice/user_index'
 end
