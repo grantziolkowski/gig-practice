@@ -5,10 +5,10 @@ class PracticeSchedule < ActiveRecord::Base
   belongs_to :user
   belongs_to :gig
 
-  # validates :gig, presence: true
-  # validates :practice_hours_per_day, numericality: true
-  # validates :user_id, presence: true
-  # validates :is_completed, presence: true
+  validates :gig, presence: true
+  validates :practice_hours_per_day, numericality: true
+  validates :user_id, presence: true
+  validates :is_completed, presence: true
 
   HOURS_IN_A_DAY = 24
 
