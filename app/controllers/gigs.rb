@@ -5,7 +5,7 @@ get '/gigs/new' do
 end
 
 # add a new gig for the current user
-post '/gigs/:user_id' do
+post '/gigs' do
   Gig.new(name: params['name'], date: params['date'], difficulty: difficulty_helper, user_id: params['user_id'])
   redirect '/gigs/:user_id'
 end
@@ -32,9 +32,9 @@ end
 
 # see all gigs for a user
 get '/gigs/:user_id' do |user_id|
-  user = User.find(user_id)
-  @gigs = user.gigs
-  erb :'gigs/show_all.erb'
+  @user = User.find(user_id)
+  @gigs = @user.gigs
+  erb :'gigs/show_all'
 end
 
 # see one gig for a user
