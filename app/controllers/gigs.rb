@@ -16,7 +16,7 @@ get '/gigs/edit/:gig_id' do
 end
 
 # post: edit a gig for the current user / error & redirect if it's the wrong user
-put '/gigs/edit/:gig_id' do
+put '/gigs/edit' do
 
 end
 
@@ -26,7 +26,7 @@ get '/gigs/delete/:gig_id' do
 end
 
 # delete a gig for the current user / error & redirect if it's the wrong user
-delete '/gigs/delete/:gig_id' do
+delete '/gigs/delete' do
 
 end
 
