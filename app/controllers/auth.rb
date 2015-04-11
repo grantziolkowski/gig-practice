@@ -19,7 +19,7 @@ post '/signin' do
   user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect "/user/#{user.id}/practice"
+    redirect "/user/#{user.id}/practice/"
   else
     redirect '/signin'
   end
@@ -29,5 +29,5 @@ end
 # submit sign out
 get '/signout' do
     session[:user_id] = nil
-    redirect '/signin'
+    redirect '/'
 end
