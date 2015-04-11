@@ -20,6 +20,7 @@ end
 
 # post: edit a gig for the current user / error & redirect if it's the wrong user
 put '/gigs/edit' do
+  @gig.update(params[:])
 
 end
 
