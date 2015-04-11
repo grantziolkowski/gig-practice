@@ -7,27 +7,28 @@ end
 # add a new gig for the current user
 post '/gigs' do
   Gig.new(name: params['name'], date: params['date'], difficulty: difficulty_helper, user_id: params['user_id'])
-  redirect '/gigs/:user_id'
+  redirect '/'
 end
 
 # see form to: edit a gig for the current user / error & redirect if it's the wrong user
-get '/gigs/edit/:gig_id' do
-
+get '/gigs/edit/:gig_id' do |gig_id|
+  @gig = Gig.find(gig_id)
+  erb :'gigs/edit'
 end
 
 # post: edit a gig for the current user / error & redirect if it's the wrong user
-put '/gigs/edit/:gig_id' do
+put '/gigs/edit' do
 
 end
 
 # see form to: delete a gig for the current user / error & redirect if it's the wrong user
-get '/gigs/delete/:gig_id' do
-
+get '/gigs/delete/:gig_id' do |gig_id|
+  erb :'gigs/delete'
 end
 
 # delete a gig for the current user / error & redirect if it's the wrong user
-delete '/gigs/delete/:gig_id' do
-
+delete '/gigs/delete' do
+  @gig = Gig.find_by(email: params[:email])
 end
 
 # see all gigs for a user
