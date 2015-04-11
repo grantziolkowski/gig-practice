@@ -4,12 +4,14 @@ class Gig < ActiveRecord::Base
 
   has_many :practice_schedules # in case of more than one user in a band
 
-  # validates :date, presence: true, length: { minimum: 8, maximum: 10}
-  # validates :days_til_gig, numericality: true
-  # validates :time, length: { minimum: 4, maximum: 7 }
-  # validates :difficulty, presence: true, numericality: { only_integer: true }
-  # validates :difficulty, numericality: { greater_than_or_equal_to: 0 }
-  # validates :difficulty, numericality: {less_than_or_equal_to: 2}
+
+  validates :date, presence: true, length: { minimum: 8, maximum: 10}
+  validates :time, length: { minimum: 4, maximum: 7 }
+  validates :difficulty, presence: true, numericality: { only_integer: true }
+  validates :difficulty, numericality: { greater_than_or_equal_to: 0 }
+  validates :difficulty, numericality: {less_than_or_equal_to: 2}
+  # Do not validate :days_til_gig. It breaks the code.
+
 
   def today_date
     DateTime.now
