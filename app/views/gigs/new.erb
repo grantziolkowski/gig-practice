@@ -1,6 +1,6 @@
 <h1>Add New Gig</h1>
 
-<form method="POST" action="gigs">
+<form method="POST" action="/gigs">
   <input type="hidden" name="user_id", value=<%= @user_id %>>
   <p><label>Gig Name</label></p>
     <p><input type="text" name="name"></p>
@@ -10,5 +10,7 @@
     <p><input type="radio" name="difficulty" value="0">Easy</p>
     <p><input type="radio" name="difficulty" value="1">Medium</p>
     <p><input type="radio" name="difficulty" value="2">Hard</p>
+    <input type="hidden" name=""
+    <input type="hidden" name="user_id" value="<%= current_user.id %>"><br>
   <p><input type="submit"></p>
 </form>
