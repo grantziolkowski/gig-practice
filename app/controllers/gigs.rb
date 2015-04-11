@@ -1,13 +1,14 @@
 # see form to: add a new gig for the current user
 get '/gigs/new' do
-  @user_id = current_user
+  bounce_guest!
+  @user_id = current_user.id
   erb :'gigs/new'
 end
 
 # add a new gig for the current user
-post '/gigs' do
-  Gig.create(name: params[:name], date: params[:date], difficulty: difficulty_helper, user_id: params[:user_id])
-  redirect "/gigs/#{current_user.id}"
+post '/gigs/new' do
+  gig = Gig.create(params[:gig])
+  redirect "/gigs/#{gig.user_id}"
 end
 
 # see form to: edit a gig for the current user / error & redirect if it's the wrong user
