@@ -1,9 +1,42 @@
 h1 {
+color: white;
 text-align: center;
+opacity: 200px;
+}
+
+body {
+  text-align: center;
+}
+
+
+h1:hover  {
+    background-color: black;
+    opacity: 0.3;
+}
+
+body {
+background-size: cover;
+background-image: url("http://potd.pdnonline.com/wp-content/uploads/2009/06/Ryan-Mastro-music.JPG");
+background-repeat:no-repeat;
+
+}
+
+.submit {
+  text-align: center;
+}
+
+.signup {
+  text-align: center;
+}
+
+.auth {
+  text-align: center;
 }
 
 .buttons {
+color: black;
 text-align: center;
+opacity: 200px;
 }
 
 .container {

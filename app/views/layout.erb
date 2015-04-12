@@ -25,9 +25,14 @@
   <title></title>
 </head>
 <body>
+
+
   <%= yield %>
+
+  <!-- <img src= "http://www.highsnobiety.com/wp-content/blogs.dir/12/files/2014/02/gq-profiles-pharrell-williams-talk-g-i-r-l-00.jpg" > -->
+
    <% if current_user %>
-    <h2><a href="/signout">Sign Out</a> <%=current_user.name%> </h2>
+    <h2><a href="/signout">Sign Out</a> <%=current_user.name.capitalize%> </h2>
   <% end %>
 </body>
 </html>
