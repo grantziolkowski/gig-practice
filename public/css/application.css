@@ -1,23 +1,26 @@
+h1, h2, h3, h4, h5, p, li {
+  font-family: Helvetica;
+  color: red;
+}
+
+a {
+  color: orange;
+}
+
+a:hover {
+  color: yellow;
+}
+
 h1 {
-color: white;
-text-align: center;
-opacity: 200px;
+  text-align: center;
+  opacity: 200px;
 }
 
 body {
   text-align: center;
-}
-
-
-h1:hover  {
-    background-color: black;
-    opacity: 0.3;
-}
-
-body {
-background-size: cover;
-background-image: url("http://potd.pdnonline.com/wp-content/uploads/2009/06/Ryan-Mastro-music.JPG");
-background-repeat:no-repeat;
+  background-size: cover;
+  background-image: url("http://potd.pdnonline.com/wp-content/uploads/2009/06/Ryan-Mastro-music.JPG");
+  background-repeat:no-repeat;
 
 }
 
@@ -34,9 +37,9 @@ background-repeat:no-repeat;
 }
 
 .buttons {
-color: black;
-text-align: center;
-opacity: 200px;
+  color: black;
+  text-align: center;
+  opacity: 200px;
 }
 
 .container {
