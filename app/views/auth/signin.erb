@@ -2,7 +2,14 @@
 
 <form method="POST" action="/signin">
   <%= erb :'auth/_auth_fields'  %>
+
+    <div class="submit" >
   <p><input type="submit"></p>
+    </div>
 </form>
 
-<a href="/signup"> Sign Up </a>
+<form action="/signup">
+    <div class="submit" >
+<input type="submit" value="Sign Up">
+    </div>
+</form>

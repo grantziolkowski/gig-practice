@@ -1,4 +1,4 @@
-<h2><%= @user.name %>'s Practice Schedules</h2>
+<h2><%= @user.name.capitalize %>'s Practice Schedules</h2>
 <% @user.practice_schedules.each do |schedule| %>
   <%= schedule.practice_hours_per_day  %> Hours a Day
  <a href="/gigs/<%= @user.id %>/<%= schedule.gig.id %>"><%= schedule.gig.date %></a>
