@@ -1,7 +1,8 @@
 #see all practice schedules for all users
 
 get '/practice' do
-  @practice = PracticeSchedule.All
+  bounce_guest!
+  @practice = PracticeSchedule.all
   erb :'practice/index'
 end
 
@@ -9,7 +10,9 @@ end
 get '/user/:user_id/practice/:gig_id' do |user_id, gig_id|
    bounce_guest!
    @user = User.find(user_id)
+   check_user(@user)
    @practice_schedule = PracticeSchedule.find_by(gig_id: gig_id)
+
    erb :'practice/schedule_show'
 end
 
@@ -17,7 +20,8 @@ end
 get '/user/:user_id/practice' do |user_id|
   bounce_guest!
   @user = User.find(user_id)
-   erb :'practice/user_index'
+  check_user(@user)
+  erb :'practice/user_index'
 end
 
 #not needed since it is created in the gig
