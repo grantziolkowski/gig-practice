@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
   <!--
     application.css is where you put your styles
   -->
@@ -18,6 +25,15 @@
   <title></title>
 </head>
 <body>
+
+  <div class= "container">
   <%= yield %>
+
+  <!-- <img src= "http://www.highsnobiety.com/wp-content/blogs.dir/12/files/2014/02/gq-profiles-pharrell-williams-talk-g-i-r-l-00.jpg" > -->
+
+   <% if current_user %>
+    <h2><a href="/signout">Sign Out</a> <%=current_username%> </h2>
+  <% end %>
+  </div>
 </body>
 </html>

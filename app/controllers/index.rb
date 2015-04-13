@@ -1,4 +1,7 @@
 get '/' do
-  # Look in app/views/index.erb
-  erb :index
+   if current_user
+     redirect 'gigs/new'
+   else
+     erb :'index'
+   end
 end

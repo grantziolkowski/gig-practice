@@ -5,7 +5,9 @@ end
 
 # submit sign up form
 post '/signup' do
-  user = User.new(params[:user])
+  user = User.create(params[:user])
+  session[:user_id] = user.id
+  redirect "/gigs/new"
 end
 
 # see sign in form
@@ -15,15 +17,22 @@ end
 
 # submit sign in form
 post '/signin' do
-  user = User.find_by(:email)
-  if user.authentic?(params[:password])
+  user = User.find_by(email: params[:email])
+  if user && user.authenticate(params[:password])
     session[:user_id] = user.id
+    if !any_gigs?
+      redirect "/gigs/new"
+    else
+      redirect "/user/#{user.id}/practice"
+    end
   else
     redirect '/signin'
   end
 end
 
-# submit sign out
-post '/signout' do
 
+# submit sign out
+get '/signout' do
+    session[:user_id] = nil
+    redirect '/'
 end

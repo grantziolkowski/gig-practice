@@ -1,6 +1,15 @@
 <h1>Sign In!</h1>
 
 <form method="POST" action="/signin">
-  <%= erb :_auth_fields  %>
+  <%= erb :'auth/_auth_fields'  %>
+
+    <div class="submit" >
   <p><input type="submit"></p>
+    </div>
+</form>
+
+<form action="/signup">
+    <div class="submit" >
+<input type="submit" value="Sign Up">
+    </div>
 </form>

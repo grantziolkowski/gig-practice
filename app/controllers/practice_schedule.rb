@@ -1,43 +1,53 @@
-#see all practice schedules
+#see all practice schedules for all users
 
 get '/practice' do
-
-@practice = PracticeSchedule.All
-
-erb :'practice/index'
-
+  bounce_guest!
+  @practice = PracticeSchedule.all
+  erb :'practice/index'
 end
+
+#get a single practice schedule for 1 user
+get '/user/:user_id/practice/:gig_id' do |user_id, gig_id|
+   bounce_guest!
+   @user = User.find(user_id)
+   check_user(@user)
+   @practice_schedule = PracticeSchedule.find_by(gig_id: gig_id)
+
+   erb :'practice/schedule_show'
+end
+
+# get all practice schedules for the current user
+get '/user/:user_id/practice' do |user_id|
+  bounce_guest!
+  @user = User.find(user_id)
+  check_user(@user)
+  erb :'practice/user_index'
+end
+
+#not needed since it is created in the gig
 
 #create a new practice_schedule
-get '/practice/new' do
+# get '/user/:user_id/practice/new' do
+#   bounce_guest!
+#   @user = User.find(:user_id])
+#   erb :'/practice/new'
+# end
 
-erb :'/practice/new'
+# post '/user/:user_id/practice/' do
+#   Project.create(params[:schedule])
+#   redirect '/user/:user_id/practice'
+# end
 
-end
+#don't need since the schedule is tied to the gig
+# #update a practice_schedule
 
-post '/practice' do
+# get '/user/:user_id/practice/:id/edit' do |id|
 
-@project = Project.create(params[:schedule])
+# end
 
-redirect '/practice'
+# #delete a single practice schedule
 
-end
+# delete '/user/:user_id/practice/:id' do |id|
 
-#get a single practice schedule
-
-get '/practice/:id' do |id|
-
-end
-
-#update a practice_schedule
-
-get '/practice/:id/edit' do |id|
-
-end
-
-#delete a single practice schedule
-
-delete '/practice/:id' do |id|
-
-end
+# end
 

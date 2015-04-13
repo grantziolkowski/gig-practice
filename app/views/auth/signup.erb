@@ -3,7 +3,10 @@
 <form method="POST" action="/signup">
   <p><label>Name</label></p>
     <p><input type="text" name="user[name]"></p>
-  <%= erb :_auth_fields  %>
+  <p><label>Email</label></p>
+    <p><input type="text" name="user[email]"></p>
+  <p><label>Password</label></p>
+    <p><input type="password" name="user[password]"></p>
   <p><label>Enter password again</label></p>
     <p><input type="password" name="user[password_confirmation]"></p>
   <p><input type="submit"></p>
