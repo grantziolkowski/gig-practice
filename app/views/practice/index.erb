@@ -1,7 +1,11 @@
+<h6> <%= erb :'/_get_error' %></h6>
+<h2>All Current Practice Schedules</h2>
 <% @practice.each do |schedule| %>
 
-  <%= schedule.user %>
-  <%= schedule.practice_hours_per_day %>
-  <%= schedule.is_completed %>
-
+  <%= schedule.user.name.capitalize %>
+  <%= schedule.practice_hours_per_day %> Hours a Day
+  <a href="/gigs/<%= schedule.user_id %>/<%= schedule.gig_id %>"><%= schedule.gig.date %></a>
+ <%= schedule.is_completed ? 'Complete' : 'In Progress' %>
+ <br>
 <% end %>
+

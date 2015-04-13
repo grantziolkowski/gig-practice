@@ -20,9 +20,8 @@ post '/signin' do
   user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    if any_gigs?
+    if !any_gigs?
       redirect "/gigs/new"
-
     else
       redirect "/user/#{user.id}/practice"
     end
